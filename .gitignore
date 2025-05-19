@@ -1,0 +1,84 @@
+# macOS
+.DS_Store
+
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Rider settings
+.idea/
+
+# Backup & temporary files
+*.bak
+*.tmp
+*.log
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+
+# Auto-generated files
+*.g.*
+Generated\ Files/
+
+# ASP.NET stuff
+App_Data/
+App_Browsers/
+App_WebReferences/
+
+# .NET Core
+project.lock.json
+project.assets.json
+*.runtimeconfig.dev.json
+
+# Others
+*.dbmdl
+*.pdb
+*.cache
+*.orig
+_ReSharper*/
+
+# DotCover
+*.dotCover
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+
+# Publish
+publish/
+
+# Local NuGet sources
+*.nupkg
+*.snupkg
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Web server locks
+iisexpress/
+
+# Environment variables
+.env
+.env.*
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
