@@ -101,11 +101,11 @@ namespace Practice1
                     if (wins == 3 || (wins == 2 && losses == 1))
                     {
                         totalWins++;
-                        Console.WriteLine($"\n\uD83C\uDFC6 Ви виграли бій!");
+                        Console.WriteLine($"\n\uD83C\uDFC6 Ви виграли бій! {GetRandomPhrase(true)}");
                     }
                     else
                     {
-                        Console.WriteLine($"\n\uD83D\uDE14 Ви програли бій.");
+                        Console.WriteLine($"\n\uD83D\uDE14 Ви програли бій. {GetRandomPhrase(false)}");
                     }
                 }
                 else
@@ -171,6 +171,26 @@ namespace Practice1
             Console.WriteLine($"| Зіграно раундів: {rounds.ToString().PadRight(11)}|");
             Console.WriteLine($"| Перемог: {wins.ToString().PadRight(20)}|");
             Console.WriteLine("+-----------------------------+");
+        }
+
+        static string GetRandomPhrase(bool isWin)
+        {
+            string[] winPhrases =
+            {
+                "Супер! Ви молодець!",
+                "Неймовірно! Так тримати!",
+                "Ваша майстерність вражає!"
+            };
+
+            string[] losePhrases =
+            {
+                "Не засмучуйтесь, наступного разу буде краще!",
+                "Кожна поразка — шлях до перемоги!",
+                "Але ви вже майже чемпіон!"
+            };
+
+            Random random = new Random();
+            return isWin ? winPhrases[random.Next(winPhrases.Length)] : losePhrases[random.Next(losePhrases.Length)];
         }
     }
 }
