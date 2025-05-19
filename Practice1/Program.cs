@@ -15,7 +15,7 @@ namespace Practice1
                 return;
             }
 
-            RunGame();
+            RunGame(name, age);
         }
 
         static string GetName()
@@ -48,13 +48,41 @@ namespace Practice1
             }
         }
 
-        static void RunGame()
+        static void RunGame(string name, int age)
         {
-            // TODO: Play the game loop
-            // TODO: Show statistics
+            int totalRounds = 0;
+            int totalWins = 0;
+            
+            while (true)
+            {
+                DisplayStats(name, age, totalRounds, totalWins);
+                Console.Write("\n\u2694\uFE0F Вирушаємо в бій? (так/ні): ");
+                string answer = Console.ReadLine().Trim().ToLower();
+
+                if (answer == "ні")
+                {
+                    Console.WriteLine($"\n\uD83D\uDC4B Бувай, {name}! До зустрічі!");
+                    break;
+                }
+                else if (answer == "так")
+                {
+                    totalRounds++;
+                }
+                else
+                {
+                    Console.WriteLine("\u2753 Невідомий варіант. Введіть 'так' або 'ні'.");
+                }
+            }
         }
 
-        // TODO: Add more methods
-
+        static void DisplayStats(string name, int age, int rounds, int wins)
+        {
+            Console.WriteLine("\n+-----------------------------+");
+            Console.WriteLine($"| Гравець: {name.PadRight(20)}|");
+            Console.WriteLine($"| Вік: {age.ToString().PadRight(24)}|");
+            Console.WriteLine($"| Зіграно раундів: {rounds.ToString().PadRight(11)}|");
+            Console.WriteLine($"| Перемог: {wins.ToString().PadRight(20)}|");
+            Console.WriteLine("+-----------------------------+");
+        }
     }
 }
